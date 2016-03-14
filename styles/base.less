@@ -88,6 +88,18 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .storage {
   color: @purple;
+
+  &.type{
+    &.function {
+      color: @yellow;
+    }
+
+    &.var {
+      color: @yellow;
+    }
+
+
+  }
 }
 
 .constant {
@@ -111,14 +123,22 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .variable {
-  color: @red;
+  color: @yellow;
+
+  &.property {
+    color: @purple;
+  }
+
+  &.object {
+    color: @blue;
+  }
 
   &.interpolation {
     color: darken(@red, 10%);
   }
 
   &.parameter.function {
-    color: @syntax-text-color;
+    color: @blue;
   }
 }
 
@@ -128,7 +148,7 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .string {
-  color: @green;
+  color: @syntax-string-color;
 
 
   &.regexp {
@@ -150,11 +170,15 @@ atom-text-editor .search-results .marker.current-result .region,
       color: @light-gray;
     }
 
-    &.string,
+    &.string{
+      color: @syntax-string-color
+    }
+
     &.variable,
     &.parameters,
-    &.array {
-      color: @syntax-text-color;
+    &.array,
+    &.arguments {
+      color: @sytantx-brace-color;
     }
 
     &.heading,
@@ -181,7 +205,7 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .support {
   &.class {
-    color: @light-orange;
+    color: @blue;
   }
 
   &.function  {
@@ -195,11 +219,10 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .entity {
   &.name.function {
-    color: @blue;
+    color: @purple;
   }
   &.name.type {
     color: @light-orange;
-    text-decoration: underline;
   }
 
   &.other.inherited-class {
@@ -247,6 +270,10 @@ atom-text-editor .search-results .marker.current-result .region,
   &.separator {
     background-color: @gray;
     color: @syntax-text-color;
+  }
+
+  &.brace {
+    color: @sytantx-brace-color;
   }
 }
 
